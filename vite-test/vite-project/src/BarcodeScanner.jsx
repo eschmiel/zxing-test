@@ -7,5 +7,5 @@ export const BarcodeScanner = ({ setResult }) => {
         }
     });
 
-    return (<video ref={ref} />)
+    return (<video ref={ref} width="280px" margin="auto" />)
 }
