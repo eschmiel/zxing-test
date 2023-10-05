@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      {scanning ? <BarcodeScanner setResult={setResult} /> : ''}
+      {scanning ? <BarcodeScanner setResult={setResult} setScanningStatus={setScanningStatus} /> : ''}
       <button onClick={btnHandler}>toggle scanning</button>
       <p>
         <span>Last result:</span>

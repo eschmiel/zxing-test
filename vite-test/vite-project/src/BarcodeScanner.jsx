@@ -1,9 +1,10 @@
 import { useZxing } from 'react-zxing';
 
-export const BarcodeScanner = ({ setResult }) => {
+export const BarcodeScanner = ({ setResult, setScanningStatus }) => {
     const { ref } = useZxing({
         onDecodeResult(result) {
             setResult(result.getText());
+            setScanningStatus(false)
         }
     });
 
