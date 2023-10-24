@@ -73,6 +73,10 @@ function App() {
           <p>
             min: {device.width?.min}
           </p>
+          <h2>
+            resizeMode
+          </h2>
+          {device.resizeMode?.map((mode) => <p>{mode}</p>)}
         </div>
       )}
     </>
