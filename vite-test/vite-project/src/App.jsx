@@ -27,16 +27,6 @@ function App() {
       setCapabilities(capabilities)
     })
   })
-  return (
-    <>
-      {scanning ? <BarcodeScanner setResult={setResult} setScanningStatus={setScanningStatus} /> : ''}
-      <button onClick={btnHandler}>toggle scanning</button>
-      <p>
-        <span>Last result:</span>
-        <span>{result}</span>
-      </p>
-    </>
-  )
   // return (
   //   <>
   //     {scanning ? <BarcodeScanner setResult={setResult} setScanningStatus={setScanningStatus} /> : ''}
@@ -45,57 +35,67 @@ function App() {
   //       <span>Last result:</span>
   //       <span>{result}</span>
   //     </p>
-  //     {deviceCapabilities.map((device, index) =>
-  //       <div key={index}>
-  //         <h1>device {index}</h1>
-  //         <h2>device kind</h2>
-  //         <p>
-  //           {device.deviceKind}
-  //         </p>
-  //         <h2>
-  //           aspectRatio:
-  //         </h2>
-  //         <p>
-  //           max: {device.aspectRatio?.max}
-  //         </p>
-  //         <p>
-  //           min: {device.aspectRatio?.min}
-  //         </p>
-  //         <h2>
-  //           frameRate:
-  //         </h2>
-  //         <p>
-  //           max: {device.frameRate?.max}
-  //         </p>
-  //         <p>
-  //           min: {device.frameRate?.min}
-  //         </p>
-  //         <h2>
-  //           height
-  //         </h2>
-  //         <p>
-  //           max: {device.height?.max}
-  //         </p>
-  //         <p>
-  //           min: {device.height?.min}
-  //         </p>
-  //         <h2>
-  //           width
-  //         </h2>
-  //         <p>
-  //           max: {device.width?.max}
-  //         </p>
-  //         <p>
-  //           min: {device.width?.min}
-  //         </p>
-  //         <h2>
-  //           resizeMode
-  //         </h2>
-  //         {device.resizeMode?.map((mode) => <p>{mode}</p>)}
-  //       </div>
-  //     )}
   //   </>
   // )
+  return (
+    <>
+      {scanning ? <BarcodeScanner setResult={setResult} setScanningStatus={setScanningStatus} /> : ''}
+      <button onClick={btnHandler}>toggle scanning</button>
+      <p>
+        <span>Last result:</span>
+        <span>{result}</span>
+      </p>
+      {deviceCapabilities.map((device, index) =>
+        <div key={index}>
+          <h1>device {index}</h1>
+          <h2>device kind</h2>
+          <p>
+            {device.deviceKind}
+          </p>
+          <h2>
+            aspectRatio:
+          </h2>
+          <p>
+            max: {device.aspectRatio?.max}
+          </p>
+          <p>
+            min: {device.aspectRatio?.min}
+          </p>
+          <h2>
+            frameRate:
+          </h2>
+          <p>
+            max: {device.frameRate?.max}
+          </p>
+          <p>
+            min: {device.frameRate?.min}
+          </p>
+          <h2>
+            height
+          </h2>
+          <p>
+            max: {device.height?.max}
+          </p>
+          <p>
+            min: {device.height?.min}
+          </p>
+          <h2>
+            width
+          </h2>
+          <p>
+            max: {device.width?.max}
+          </p>
+          <p>
+            min: {device.width?.min}
+          </p>
+          <h2>
+            resizeMode
+          </h2>
+          {device.resizeMode?.map((mode) => <p>{mode}</p>)}
+        </div>
+      )}
+    </>
+  )
 }
 
 export default App
