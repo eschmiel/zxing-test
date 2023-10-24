@@ -45,6 +45,7 @@ function App() {
         <span>Last result:</span>
         <span>{result}</span>
         Grabbing highest aspect ratio now
+        Making arb change
       </p>
       {deviceCapabilities.map((device, index) =>
         <div key={index}>
