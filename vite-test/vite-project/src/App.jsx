@@ -44,11 +44,12 @@ function App() {
       <p>
         <span>Last result:</span>
         <span>{result}</span>
+        Grabbing highest aspect ratio now
       </p>
       {deviceCapabilities.map((device, index) =>
         <div key={index}>
           <h1>device {index}</h1>
-          <h2>facingMode?s</h2>
+          <h2>facingMode?</h2>
           <p>
             {device.facingMode}
           </p>
