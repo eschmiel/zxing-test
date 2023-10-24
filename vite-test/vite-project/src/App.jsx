@@ -48,11 +48,11 @@ function App() {
       {deviceCapabilities.map((device, index) =>
         <div key={index}>
           <h1>device {index}</h1>
-          <h2>facingMode?</h2>
+          <h2>facingMode?s</h2>
           <p>
             {device.facingMode}
           </p>
-          <h2>device kind</h2>
+          <h2>device kinds</h2>
           <p>
             {device.deviceKind}
           </p>
