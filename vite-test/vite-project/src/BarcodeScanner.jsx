@@ -11,11 +11,11 @@ export const BarcodeScanner = ({ setResult, setScanningStatus }) => {
 
             devices.forEach((device) => {
                 if (device.getCapabilities) {
-                    const { aspectRatio } = device.getCapabilities()
-                    const hasMinimumAspectRatio = aspectRatio?.max > 3000
+                    const { aspectRatio, facingMode } = device.getCapabilities()
+                    const properFacing = facingMode === 'environment'
                     const isFirstDevice = !lowestAspectRatio && aspectRatio?.max
                     const aspectRatioIsLessThanLowest = aspectRatio?.max < lowestAspectRatio
-                    if (hasMinimumAspectRatio && (isFirstDevice || aspectRatioIsLessThanLowest)) {
+                    if (properFacing && (isFirstDevice || aspectRatioIsLessThanLowest)) {
                         lowestAspectRatio = aspectRatio.max
                         bestDevice = device.deviceId
                     }
