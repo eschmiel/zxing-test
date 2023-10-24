@@ -18,6 +18,7 @@ function App() {
       devices.forEach((device) => {
         if (device.getCapabilities) {
           const cap = device.getCapabilities()
+          cap.deviceKind = device.kind
           capabilities.push(cap)
         }
         // const {aspectRatio, frameRate, height, width, resizeMode} = cap
@@ -37,6 +38,10 @@ function App() {
       {deviceCapabilities.map((device, index) =>
         <div key={index}>
           <h1>device {index}</h1>
+          <h2>device kind</h2>
+          <p>
+            {device.deviceKind}
+          </p>
           <h2>
             aspectRatio:
           </h2>
